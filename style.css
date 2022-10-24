@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+header, footer{
+    flex-shrink: 0;
+    font-family: 'Roboto SLab',serif;
+}
+section{
+    flex-grow: 1;
+    margin-bottom: 100px;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(220, 74, 0);
+    padding: 0 25px;
+    height: 100px;
+}
+.logo a img{
+    width: 100px;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.navigation li{
+    list-style: none;
+}
+.navigation li a{
+    color: #eee;
+    text-decoration: none;
+    display: block;
+    padding: 40px 25px;
+    line-height: 1;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+.navigation li a:hover{
+    color: white;
+    font-size: 1.7em;
+}
+.hamburger{
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s;
+}
+.hamburger:before,
+.hamburger:after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.hamburger:before{
+    top: -10px;
+    width: 20px;
+}
+.hamburger:after{
+    top: 10px;
+    width: 25px;
+}
+.toggle-menu{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+.hamburger, .toggle-menu{
+    display: none;
+}
+.navigation input:checked ~ .hamburger{
+    background: transparent;
+}
+.navigation input:checked ~ .hamburger:before{
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+.navigation input:checked ~ .hamburger:after{
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+}
+.navigation input:checked ~ .menu{
+    right: 0;
+}
+.cart-li2{
+    display: none;
+}
+@media screen and (max-width: 900px){
+    .hamburger, .toggle-menu{
+        display: block;
+    }
+    header{
+        padding: 10px 20px;
+    }
+    .navigation{
+        flex-direction: row-reverse;
+    }
+    .menu {
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        background-color: violet;
+        width: 300px;
+        height: 100%;
+        padding-top: 65px;
+    }
+    .menu li{
+        width: 100%;
+    }
+    .menu li a {
+        padding: 30px;
+        font-size: 24px;
+    }
+    .cart-li{
+        display: none;
+    }
+    .cart-li2{
+        display: block;
+    }
+}
+.searchbox{
+    position: sticky;
+    top: 100px;
+    z-index: 1;
+    height: 80px;
+    background-color: #eee;
+}
+.search-form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    margin: 200px auto 100px auto;
+}
+#category{
+    padding: 10px;
+    border: 1px solid gray;
+}
+.select-category{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.select-category:hover{
+    cursor: pointer;
+}
+.search-category{
+    width: 30%;
+}
+.searchbtn{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(218, 218, 38);
+    font-weight: bolder;
+}
+.searchbtn:hover{
+    background-color: #333;
+    cursor: pointer;
+    color: #eee;
+}
+.booklist{
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    padding-top: 100px;
+}
+.book-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    flex-wrap: wrap;
+}
+.book-container .card{
+    background-color: #333;
+    width: 285px;
+    height: auto;
+    margin: 20px 50px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column; 
+}
+.book-cover{
+    width: 100%;
+    height: 410px;
+    border-radius: 20px 20px 0 0;
+}
+.book-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+.book-info>p, .book-info>span{
+    padding: 0 10px;
+    text-align: center;
+}
+.book-title{
+    margin-top: 10px;
+    font-weight: bolder;
+    color: lightgoldenrodyellow;
+}
+.book-author,.book-date{
+    color: whitesmoke;
+}
+.book-date{
+    margin-bottom: 10px;
+}
+.book-description{
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.read-more{
+    display: none;
+}
+.book-price{
+    font-size: 1.2em;
+    color: whitesmoke;
+    margin-bottom: 10px;
+}
+.buttons{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    font-weight: bolder;
+}
+.buttons i{
+    font-size: large;
+    margin-bottom: 5px;
+}
+.btn-cart,.btn-wishlist{
+    background-color: whitesmoke;
+    color: orange;
+    flex: 2;
+    text-decoration: none;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-cart{
+    border-bottom-left-radius: 20px;
+}
+.btn-cart:hover{
+    background-color: #333;
+    cursor: pointer;
+    color: #eee;
+}
+.btn-wishlist:hover{
+    background-color: #333;
+    cursor: pointer;
+    color: #eee;
+}
+.btn-buy{
+    background-color: orange;
+    color: whitesmoke;
+    flex: 3;
+    text-decoration: none;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+}
+.btn-buy:hover{
+    background-color: #333;
+    cursor: pointer;
+    color: #eee;
+}
+.browse-more{
+    padding-top: 20px;
+    text-align: center;
+}
+.browse-more a{
+    color: gray;
+    text-decoration: none;
+}
+footer{
+    background-color: #222;
+    height: 100px;
+    color: lightgray;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: lightgray;
+}
+footer a:hover{
+    color: white;
+}
+/* cart.html */
+.page-label{
+    margin: 200px auto 50px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+}
+.cart{
+    margin-bottom: 100px;
+}
+.cart>div{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.cart div span, .quantity-label{
+    padding: 0 70px;
+    font-size: 1.2em;
+}
+.cart img{
+    width: 100px;
+}
+.quantity,.remove-btn{
+    padding: 10px;
+    margin-left: 5px;
+}
+.quantity{
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.remove-btn{
+    border-radius: 10px;
+    background-color: darkred;
+    color: lightgray;
+    font-weight: bold;
+    border: none;
+}
+.remove-btn:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+.tocheckout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.totalprice{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.checkout-btn{
+    background-color: #b00;
+    width: 250px;
+    margin: 10px 0;
+    font-weight: bolder;
+    padding: 20px;
+    color: whitesmoke;
+    border: none;
+    border-radius: 50px;
+}
+.checkout-btn:hover{
+    cursor: pointer;
+    background-color:  rgb(199, 155, 155);
+}
+/* checkout.html */
+.checkout-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 200px 0;
+}
+.payment-information{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.tofill-label{
+    font-size: 1.5em;
+    padding-top: 20px;
+}
+.contact-info{
+    border-top: 1px solid gray;
+    margin-top: 10px;
+}
+.payment-info{
+    border-top: 1px solid gray;
+    margin-top: 10px;
+}
+.name,.address,.payment,.phone,.email{
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.5em;
+}
+#name,#address,#phone,#email,.regions,.country{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+#name{
+    width: auto;
+}
+.streetaddress{
+    width: auto;
+}
+input[type=radio]{
+    display: none;
+}
+input[type=radio]+label{
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    border: 2px solid gray;
+    box-shadow: 1px 1px 5px 1px #C4B5B5;
+    text-align: center;
+    height: 55px;
+}
+input[type=radio]+label:hover{
+    cursor: pointer;
+}
+.cod{
+    font-size: 20px;
+}
+.payment-card img{
+    padding: 0 5px;
+}
+
+input[type="radio"]:checked + label {
+	border: 2px solid black;
+}
+.paymentmethod{
+    margin-top: 10px;
+}
+#cod:checked ~ .paymentmethod .cardinfo .cashondelivery{
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+   
+}
+#creditcard:checked ~ .paymentmethod .cardinfo .creditcard{
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+}
+#creditcard:checked ~ .paymentmethod .cardinfo .cashondelivery,
+#creditcard:checked ~ .paymentmethod .cardinfo .cashondelivery{
+    position: relative;
+    opacity: 1;
+    transform: scale(0);
+}
+#cod:checked ~ .paymentmethod .cardinfo .cashondelivery{
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+
+}
+#cod:checked ~ .paymentmethod .cardinfo .creditcard,
+#cod:checked ~ .paymentmethod .cardinfo .creditcard{
+    position: relative;
+    opacity: 1;
+    transform: scale(0);
+    margin-bottom: -200px;
+}
+.creditcard{
+    display: flex;
+    flex-direction: column;
+}
+.creditcard input{
+    margin: 10px;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.checkout-buttons{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.backbtn,.orderbtn{
+    padding: 15px;
+    font-weight: bold;
+    color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+}
+.backbtn{
+    background-color: #333;
+}
+.orderbtn{
+    background-color: red;
+}
+.backbtn:hover, .orderbtn:hover{
+    cursor: pointer;
+    font-size:medium;
+    transition: 0.2s;
+}
+.review-order{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    border-left: 2px solid gray;
+}
+.review-order>div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.review-order-label{
+    font-size: 1.5em;
+}
+.review-order img{
+    width: 50px;
+    padding-top: 10px;
+}
+.sub-total{
+    font-size: 0.8em;
+}
+.total{
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+/* thankyou.html */
+.thankyou{
+    width: 80%;
+    color: #222;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 200px auto;
+    padding: 100px;
+    border-radius: 50px;
+}
+.tybtn{
+    background-color: blue;
+    color: whitesmoke;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+}
+.tybtn:hover{
+    background-color: navy;
+    cursor: pointer;
+}
+/* about.html */
+.about-us{
+    font-weight: bold;
+    padding-top: 200px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: justify
+}
+.about-us h1{
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.about-us img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    float: left;
+    padding: 20px;
+}
+/* wishlist.html */
+.wishlist{
+    font-weight: bold;
+    padding: 200px 0 100px 0;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.wishlist div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.wishlist img{
+    width: 200px;
+    margin: 50px;
+}
+.wishlist img:hover{
+    cursor: pointer;
+}
+/* contact-us.html */
+.contact-us{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column; 
+    margin: auto;
+    align-items: center;
+    width: 60%;
+}
+.contact-us h5{
+    padding-bottom: 20px;
+}
+.contact-us input{
+    width: 600px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+#details{
+    padding-bottom: 150px;
+}
+.contact-us button{
+    margin-top: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color: blue;
+    color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+.contact-us button:hover{
+    cursor: pointer;
+    font-size: medium;
+}
+@media (max-width: 900px){
+    .searchbox{
+        position: static;
+    }
+}
+@media (max-width:768px){
+    .booklist{
+        font-size: 2.5em;
+    }
+    .book-container{
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+    }
+    .book-container .card{
+        flex-direction: row;
+        height: 250px;
+        width: 42%;
+        margin: 10px auto;
+    }
+    .book-cover{
+        height: 100%;
+        width: auto;
+        border-radius: 20px 0 0 20px;
+    }
+    .book-info{
+        background-color: #333;
+        border-radius: 0 20px 20px 0;
+        flex: 1;
+    }
+    .hide{
+        display: none;
+    }
+    .read-more{
+        display: block;
+    }
+    .read-more a{
+        color: gray;
+        text-decoration: none;
+    }
+    .buttons span{
+        display: none;
+    }
+    .btn-cart{
+        border-radius: 0;
+    }
+    .checkout-container{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .payment-information{
+        width: auto;
+    }
+    .review-order{
+        width: auto;
+    }
+    .review-order .item, .review-order .price{
+        padding-left: 10px;
+    }
+    #name{
+        width: auto;
+    }
+    .streetaddress{
+        width: auto;
+    }
+    .review-order{
+        border: none;
+    }
+    .contact-us{
+        width: 90%;
+    }
+    .contact-us input{
+        width: 80%;
+    }
+}
+@media (max-width: 760px){
+    .page-label{
+        font-size: 2em;
+        margin-bottom: -50px;
+    }
+    .cart-content span{
+        display: none;
+    }
+    .cart div{
+        flex-direction: column;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .remove-btn,.quantity{
+        margin-top: 10px;
+    }
+}
+@media (max-width: 700px){
+    .book-container{
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+    }
+    .book-container .card{
+        flex-direction: row;
+        height: 250px;
+        width: 90%;
+        margin: 10px auto;
+    }
+    .search-form{
+        width: 70%;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+    #category{
+        border-radius: 200px;
+        margin-bottom: 5px;
+    }
+    .select-category{
+        border: none;
+    }
+    .search-category{
+        width: auto;
+    }
+    .form-title{
+        text-align: center;
+        font-size: 2em;
+    }
+    .paymentform{
+        flex-direction: column;
+        align-items: center;
+    }
+    .paymentinfo{
+        margin-left: 20px;
+    }
+    .backbtn{
+        margin-right: 0;
+    }
+    .proceed{
+        flex-direction: column;
+        align-items: flex-end;
+        margin: auto;
+    }
+    .thankyou{
+        width: 90%;
+        padding: 100px 20px;
+    }
+}
+@media (max-width: 343px){
+    .booklist{
+        font-size: 1.7em;
+    }
+}
+@media only screen and (max-width: 319px){
+    .book-container{
+        font-size: 9px;
+    }
+    .searchbox{
+        position: static;
+    }
+    .review-order div span{
+        font-size: 0.8em;
+    }
+}

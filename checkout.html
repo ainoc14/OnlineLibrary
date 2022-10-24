@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OfflineLibrary | checkout</title>
+    <script src="https://kit.fontawesome.com/1205ee9176.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+  
+        <div class="navigation">
+            <input type="checkbox" class="toggle-menu">
+            <div class="hamburger"></div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li class="cart-li"><a href="cart.html">Cart</i></a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+            <li class="cart-li2"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </div>     
+    </header>
+    <div class="checkout-container">
+        <div class="payment-information">
+            <p>FILL OUT TO PROCEED</p>
+            <div class="tofill-label">Billing Information:</div>
+            <div>
+                <input type="text" placeholder="First Name" id="name" class="first">
+                <input type="text" placeholder="Last Name" id="name" class="last">
+            </div>
+            <input type="text" placeholder="Street Address Line 1" id="address" class="streetaddress">
+            <input type="text" placeholder="Street Address Line 2 (Optional)" id="address" class="streetaddress">
+            <div class="geo-loc">
+                <select name="country" id="country" class="country">
+                    <option selected disabled>Select Country: </option>
+                    <option>Philippines</option>
+                </select>
+                <select name="regions" id="regions" class="regions">
+                    <option selected disabled>Select Region: </option>
+                    <option>Region I</option>
+                    <option>Region II</option>
+                    <option>Region III</option>
+                    <option>Region IV-A</option>
+                    <option>MIMAROPA</option>
+                    <option>Region V</option>
+                    <option>Region VI</option>
+                    <option>Region VII</option>
+                    <option>Region VIII</option>
+                    <option>Region IX</option>
+                    <option>Region X</option>
+                    <option>Region XI</option>
+                    <option>Region XII</option>
+                    <option>Region XIII</option>
+                    <option>NCR</option>
+                    <option>CAR</option>
+                    <option>BARMM</option>
+                </select>
+                <input type="text" placeholder="City" id="address">
+                <input type="text" placeholder="Postal / Zip Code" id="address" class="zipcode">
+            </div>
+            <div class="contact-info">
+                <div class="tofill-label">
+                    Contact Information: 
+                </div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+63)">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                </div>
+            </div>
+            <div class="payment-info">
+                <div class="tofill-label">
+                    Payment:
+                </div>
+                <p>All transactions are secure and encrypted</p>
+      
+                <input type="radio" id="creditcard" name="payment">
+                <label for="creditcard"  class="payment-card"><span><img src="images/american-express.jpg"><img src="images/mastercard.jpg"><img src="images/visa.jpg"></i></span></label>
+                <input type="radio" id="cod"  name="payment" checked>
+                <label for="cod"  class="cod">Cash On Delivery</label>
+            
+                <div class="paymentmethod">
+                    <div class="cardinfo">
+                        <div class="creditcard">
+                            <input type="text" id="cardname" placeholder="Cardholder Name">
+                            <input type="text" id="cardnumber" placeholder="Card Number" class="cardnumber">
+                            <div>
+                                <input type="text" id="expdate" placeholder="Exp Date (mm/yy)">
+                                <input type="text" id="cardcvv" placeholder="Security Code">
+                            </div>
+                        </div>
+                         <span class="cashondelivery">
+                        </span>
+                    </div>
+                </div>
+                 <div class="checkout-buttons">
+                    <a href="index.html"  class="back">
+                         <button type="button" class="backbtn"><span><i class="fa-solid fa-arrow-left-long"></i> Back</span></button>
+                    </a>
+                    <a href="thankyou.html" class="complete">
+                        <button type="button" class="orderbtn">Complete Order</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="review-order">
+            <span class="review-order-label">REVIEW ORDER</span>
+            <div>
+                <img class="item-img" src="images/image1.jpg">
+                <span class="item">2 x To Kill a MockingBird</span>
+                <span class="price">$9.99</span>
+            </div>
+            <div>
+                <img class="item-img" src="images/image3.jpg">
+                <span class="item">1 x Nineteen Eighty-Four</span>
+                <span class="price">$9.99</span>
+            </div>
+            <div class="sub-total">
+                <span></span>
+                <span></span>
+                <span>SUB-TOTAL: $29.97</span>
+            </div>
+            <div class="total">
+                <span></span>
+                <span></span>
+                <span>TOTAL: $29.97</span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright ©2022 OfflineLibrary, Inc. All rights reserved.</p>
+        <p><a href="#">Privacy & Legal Policies</a> | <a href="#"> Cookie Preferences</a></p>
+    </footer>
+</body>
+</html>
